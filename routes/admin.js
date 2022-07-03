@@ -13,11 +13,11 @@ router.get("/add-product", (req, res, next) => {
 });
 
 router.post("/add-product", (req, res, next) => {
-  products.push(JSON.parse(JSON.stringify(req.body.title)));
+  products.push({ title: JSON.parse(JSON.stringify(req.body.title)) });
   res.redirect("/");
 });
 
 module.exports = {
-    routes: router,
-    products,
+  routes: router,
+  products,
 };
