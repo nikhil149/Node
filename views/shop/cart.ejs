@@ -4,10 +4,16 @@
     <body>
         <%- include('../includes/navigation.ejs') %>
         <main>
-            <% if(products.length > 0) { %>
+            <% if(products[0] !== undefined) { %>
                 <ul>
-                    <% products.map((product)=>{ %>
-                        <li><%= product?.productData?.title  %> (<%= product.qty%>)</li>
+                    <% products.map((product)=>{ %> 
+                        <li>
+                            <p><%= product.productData.title  %> (<%= product.qty%>)</p>
+                            <form action="/cart-delete-item" method="post">
+                                <input type="hidden" value="<%=product?.productData?.id%>" name="productId" />
+                                <button type="submit" class="btn"> Delete</button>
+                            </form>
+                        </li>
                         <% }) %>
                 </ul>
             <% } else { %>
