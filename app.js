@@ -10,13 +10,6 @@ const errorController = require("./controllers/error");
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
-db.execute("SELECT * FROM shop.product")
-  .then((result) => {
-    console.log(result[0]);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
 
 const app = express();
 
