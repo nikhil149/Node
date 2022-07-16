@@ -6,12 +6,10 @@ const CartItem = sequelize.define("cartItem", {
   id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
-    primaryKey: true,
     allowNull: false,
+    primaryKey: true,
   },
-  quantity: {
-      type: Sequelize.INTEGER,
-  }
+  quantity: Sequelize.INTEGER,
 });
 
 module.exports = CartItem;
